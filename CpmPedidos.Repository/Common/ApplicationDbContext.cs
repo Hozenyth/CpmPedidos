@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CpmPedidos.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace CpmPedidos.Repository.Common
 {
     public class ApplicationDbContext :DbContext
     {
-       
+       public DbSet<Cidade> Cidades { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            
