@@ -1,5 +1,6 @@
 ﻿
 
+using CpmPedidos.Domain.Enums;
 using CpmPedidos.Domain.Interfaces;
 
 namespace CpmPedidos.Domain.Entities
