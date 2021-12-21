@@ -6,8 +6,7 @@ using CpmPedidos.Domain.Interfaces;
 namespace CpmPedidos.Domain.Entities
 {
     public class Endereco : BaseDomain
-    {
-        public int EnderecoId { get; set; }      
+    {           
         public TipoEnderecoEnum Tipo{ get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }
