@@ -11,6 +11,9 @@ namespace CpmPedidos.Repository.Maps
         public override void Configure(EntityTypeBuilder<CategoriaProduto> builder)
         {
             base.Configure(builder);
+
+            builder.Property(x => x.Nome).HasColumnName("nome").HasMaxLength(50).IsRequired();
+            builder.Property(x => x.Ativo).HasColumnName("nome").IsRequired();
         }
     }
 }

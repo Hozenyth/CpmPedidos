@@ -11,6 +11,10 @@ namespace CpmPedidos.Repository.Maps
         public override void Configure(EntityTypeBuilder<ProdutoPedido> builder)
         {
             base.Configure(builder);
+
+            builder.Property(x => x.Quantidade).HasColumnName("quantidade").HasPrecision(2).IsRequired();
+            builder.Property(x => x.Preco).HasColumnName("preco").HasPrecision(17, 2).IsRequired();
+            
         }
     }
 }
