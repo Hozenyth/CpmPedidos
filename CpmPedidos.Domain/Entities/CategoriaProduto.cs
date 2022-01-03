@@ -1,6 +1,7 @@
 ﻿
 
 using CpmPedidos.Domain.Interfaces;
+using System.Collections.Generic;
 
 namespace CpmPedidos.Domain.Entities
 {
@@ -8,5 +9,7 @@ namespace CpmPedidos.Domain.Entities
     {            
         public string Nome { get; set; }     
         public bool Ativo { get; set; }
+
+        public virtual List<Produto> Produtos { get; set; }
     }
 }

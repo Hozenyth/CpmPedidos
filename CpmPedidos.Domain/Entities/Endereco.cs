@@ -15,7 +15,8 @@ namespace CpmPedidos.Domain.Entities
         public string Cep { get; set; }       
        
         public int CidadeId { get; set; }  
-        public virtual Cidade Cidade{ get; set; }  
-       
+        public virtual Cidade Cidade{ get; set; }
+
+        public virtual Cliente Cliente { get; set; }
     }
 }

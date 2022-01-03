@@ -17,6 +17,9 @@ namespace CpmPedidos.Repository.Maps
             builder.Property(x => x.Descricao).HasColumnName("descricao").HasMaxLength(50).IsRequired();
             builder.Property(x => x.Preco).HasColumnName("preco").HasPrecision(17, 2).IsRequired();
             builder.Property(x => x.Ativo).HasColumnName("ativo").IsRequired();
+
+            builder.Property(x => x.CategoriaId).HasColumnName("id_categoria").IsRequired();
+            builder.HasOne(x => x.Categoria).WithMany(x => x.Produtos).HasForeignKey(x => x.CategoriaId);
         }
     }
 }
