@@ -18,6 +18,23 @@ namespace CpmPedidos.Repository.Maps
 
             builder.Property(x => x.ImagemId).HasColumnName("id_imagem").IsRequired();
             builder.HasOne(x => x.Imagem).WithMany().HasForeignKey(x => x.ImagemId);
+
+            builder
+                .HasMany(x => x.Produtos)
+                .WithMany(x => x.Combos)
+                .UsingEntity<ProdutoCombo>(
+                 x=> x.HasOne(f => f.Produto).WithMany().HasForeignKey(f=> f.ProdutoId),
+                 x=> x.HasOne(f=> f.Combo).WithMany().HasForeignKey(f=> f.ComboId),
+                 x=>
+                 {
+                     x.ToTable("tb_produto_combo");
+
+                     x.HasKey(f => new { f.ProdutoId, f.ComboId }); //Chave Composta
+
+                     x.Property(x => x.ProdutoId).HasColumnName("id_produto").IsRequired();
+                     x.Property(x => x.ComboId).HasColumnName("id_combo").IsRequired();
+                 }                
+                );
         }
     }
 }
